@@ -1,0 +1,31 @@
+body{
+    font-family: Arial;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .board{
+    gap: 3px;
+    width: 309px;
+    height: 309px;
+    color: white;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  h1{
+    text-align: center;
+  }
+  .tile{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+  }
+  .winner{
+    background-color: green;
+  }
+  .btn{
+  
+  }
