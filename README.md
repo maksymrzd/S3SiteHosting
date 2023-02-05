@@ -46,7 +46,9 @@ In each block we have to specify the following things:
 <li>source(where our file is located)</li> 
 <li>content-type for our files to work properly.</li>
 </ul>
-That's what it should look like:
+
+That's what it should look like: <br>
+
 ```tf
 resource "aws_s3_object" "index_html" {
   bucket       = aws_s3_bucket.websitehosting.bucket
@@ -76,4 +78,5 @@ resource "aws_s3_object" "error_html" {
   content_type = "text/html"
 }
 ```
+
 After applying our terraform code, we can go to our bucket properties, scroll down to static website hosting block and click on our link to access the site.
