@@ -79,5 +79,8 @@ resource "aws_s3_object" "error_html" {
 }
 ```
 
-After applying our terraform code, we can go to our bucket properties, scroll down to static website hosting block and click on our link to access the site.
+After applying our terraform code, we can go to our bucket properties, scroll down to static website hosting block and click on our link to access the site.<br>
+![image](https://user-images.githubusercontent.com/114437342/216842650-88b1bb06-44d4-48bb-a5a5-16f804a7ba1d.png)
+
+
 
