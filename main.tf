@@ -51,3 +51,10 @@ resource "aws_s3_object" "styles_css" {
   content_type = "text/css"
 }
 
+resource "aws_s3_object" "error_html" {
+  bucket       = aws_s3_bucket.websitehosting.bucket
+  key          = "error.html"
+  source       = "error.html"
+  content_type = "text/html"
+}
+
