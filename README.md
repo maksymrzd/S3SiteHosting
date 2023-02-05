@@ -46,7 +46,7 @@ In each block we have to specify the following things:
 <li>source(where our file is located)</li> 
 <li>content-type for our files to work properly.</li>
 </ul>
-That's what it should look like:<br>
+That's what it should look like:
 ```tf
 resource "aws_s3_object" "index_html" {
   bucket       = aws_s3_bucket.websitehosting.bucket
