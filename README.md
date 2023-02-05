@@ -10,7 +10,7 @@ resource "aws_s3_bucket" "websitehosting" {
 ```
 Next, we need to enable static website hosting and configure it.<br>
 We can do it with `aws_s3_bucket_website_configuration` resource.<br>
-Here we specify bucket id in `bucket` line, and also index.html and error.html files for our site:
+Here we specify bucket id in bucket line, and also index.html and error.html files for our site:
 ```tf
 resource "aws_s3_bucket_website_configuration" "websitehostingconf" {
   bucket = aws_s3_bucket.websitehosting.bucket
@@ -23,7 +23,7 @@ resource "aws_s3_bucket_website_configuration" "websitehostingconf" {
 }
 ```
 Then, we have to make our bucket publicly accessible for all users to view our hosted site.<br>
-`aws_s3_bucket_policy` and `aws_s3_bucket_acl` resources can help us with this.<br>
+`aws_s3_bucket_policy` and `aws_s3_bucket_acl` resources can help us with that.<br>
 We specify policy through the policy.json file and allow everyone to read our files with acl.<br>
 ```tf
 resource "aws_s3_bucket_policy" "policy" {
@@ -39,7 +39,14 @@ resource "aws_s3_bucket_acl" "acl" {
 ```
 The last thing that we need to do is to upload required files for our site.<br>
 We can do this with `aws_s3_object` resource.<br>
-In each block we specify bucket id, key(name of our file), source(where our file is located), and content-type for our files to work properly.<br>
+In each block we have to specify the following things:
+<ul>
+<li>bucket id</li>
+<li>key(name of our file)</li> 
+<li>source(where our file is located)</li> 
+<li>content-type for our files to work properly.</li>
+</ul>
+That's what it should look like:<br>
 ```tf
 resource "aws_s3_object" "index_html" {
   bucket       = aws_s3_bucket.websitehosting.bucket
