@@ -37,7 +37,7 @@ resource "aws_s3_bucket_acl" "acl" {
   acl = "public-read"
 }
 ```
-The last thing that we need to do is to upload required files for our site.<br>
+The last thing that we need to do is to upload files required for our site.<br>
 We can do this with `aws_s3_object` resource.<br>
 In each block we have to specify the following things:
 <ul>
@@ -80,3 +80,4 @@ resource "aws_s3_object" "error_html" {
 ```
 
 After applying our terraform code, we can go to our bucket properties, scroll down to static website hosting block and click on our link to access the site.
+
